@@ -70,9 +70,8 @@ public class PlayerTargetingState : PlayerBaseState
     {
         Vector2 normMovement = stateMachine.InputReader.MovementValue.normalized;
 
-        Debug.Log(normMovement);
-
         stateMachine.Animator.SetFloat(TargetingForwardHash, normMovement.y, 0.1f, deltaTime);
+        
         stateMachine.Animator.SetFloat(TargetingRightHash, normMovement.x, 0.1f, deltaTime);
 
     }

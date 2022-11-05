@@ -31,6 +31,89 @@ Transform:
   m_Father: {fileID: 1166645114836671730}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5082844393579758032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8925982322180361981}
+  - component: {fileID: 8228811507034295662}
+  - component: {fileID: 6421222594726589436}
+  m_Layer: 0
+  m_Name: WeaponLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8925982322180361981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082844393579758032}
+  m_LocalRotation: {x: 0.031102631, y: 0.028298564, z: -0.13166489, w: 0.99040204}
+  m_LocalPosition: {x: -0.39, y: 0.174, z: 0.055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1013261787679573201}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 3.96, y: 2.75, z: -15.05}
+--- !u!136 &8228811507034295662
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082844393579758032}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 1.25
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6421222594726589436
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5082844393579758032}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5654188015455236456
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +279,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8021997467315950925}
+    - targetCorrespondingSourceObject: {fileID: 1852576806548013000, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8925982322180361981}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
       insertIndex: -1
@@ -212,7 +298,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1963768427136538476}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2184990845927834366}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2251630268248429771}
   m_SourcePrefab: {fileID: 100100000, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
+--- !u!4 &1013261787679573201 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
+  m_PrefabInstance: {fileID: 1709811982849653529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1166645114836671730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
@@ -243,6 +340,25 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDamping>k__BackingField: 0
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: Attack1
+    <ComboStateIndex>k__BackingField: 1
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboAttackTime>k__BackingField: 0.6
+    <Force>k__BackingField: 15
+    <ForceTime>k__BackingField: 0.35
+  - <AnimationName>k__BackingField: Attack2
+    <ComboStateIndex>k__BackingField: 2
+    <TransitionDuration>k__BackingField: 0.1
+    <ComboAttackTime>k__BackingField: 0.5
+    <Force>k__BackingField: 15
+    <ForceTime>k__BackingField: 0.35
+  - <AnimationName>k__BackingField: Attack3
+    <ComboStateIndex>k__BackingField: -1
+    <TransitionDuration>k__BackingField: 0.2
+    <ComboAttackTime>k__BackingField: 0
+    <Force>k__BackingField: 20
+    <ForceTime>k__BackingField: 0.35
 --- !u!114 &2117236312525453435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,3 +430,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 9029192885972178494}
+  drag: 0.1
+--- !u!114 &2184990845927834366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980195297182647880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b13d594db5f1b447a9428c34da2654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLogic: {fileID: 5082844393579758032}
+--- !u!114 &2251630268248429771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980195297182647880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbed294b60f6dc46bc41480f44d2b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
