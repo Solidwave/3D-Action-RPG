@@ -7,15 +7,17 @@ public class PlayerAttackingState : PlayerBaseState
 {
     private float previousFrameTime;
     private bool alreadyAppliedForce;
-    private Attack Attack;
+    private Attack attack;
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
-        Attack = stateMachine.Attacks[attackIndex];
+        attack = stateMachine.Attacks[attackIndex];
+
+        stateMachine.Weapon.SetAttack(attack.Damage);
     }
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(Attack.AnimationName, Attack.TransitionDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
     }
 
     public override void Exit()
@@ -32,7 +34,7 @@ public class PlayerAttackingState : PlayerBaseState
 
         if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {   
-            if (normalizedTime > Attack.ForceTime)
+            if (normalizedTime > attack.ForceTime)
             {
                 TryApplyForce();
             }
@@ -55,10 +57,10 @@ public class PlayerAttackingState : PlayerBaseState
 
     private void TryComboAttack(float normalizedTime)
     {
-        if (Attack.ComboStateIndex == -1) { return;}
-        if (normalizedTime < Attack.ComboAttackTime) { return;}
+        if (attack.ComboStateIndex == -1) { return;}
+        if (normalizedTime < attack.ComboAttackTime) { return;}
         
-        stateMachine.SwitchState(new PlayerAttackingState(stateMachine, Attack.ComboStateIndex));
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine, attack.ComboStateIndex));
     }
 
 
@@ -69,7 +71,7 @@ public class PlayerAttackingState : PlayerBaseState
             return;
         }
 
-        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * Attack.Force);
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force);
 
         alreadyAppliedForce = true;
     }
