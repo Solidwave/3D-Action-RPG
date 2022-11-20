@@ -9,12 +9,15 @@ public class WeaponDamage : MonoBehaviour
     private List<Collider> alreadyCollidedWith = new List<Collider>();
 
     private int damage;
+    private float knockback;
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         alreadyCollidedWith.Clear();
     }
-    private void OnTriggerEnter(Collider other) {
-        if (other == myCollider) 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == myCollider)
         {
             return;
         }
@@ -23,17 +26,26 @@ public class WeaponDamage : MonoBehaviour
         {
             return;
         }
+        
+        alreadyCollidedWith.Add(other);
 
         if (other.TryGetComponent<Health>(out Health health))
         {
             health.DealDamage(damage);
-
-            alreadyCollidedWith.Add(other);
         }
-   }
+        Debug.Log(other);
+        if (other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))
+        {
+            Vector3 direction = (other.transform.position - myCollider.transform.position).normalized;
 
-   public void SetAttack(int damage)
-   {
+            forceReceiver.AddForce(direction * knockback);
+        }
+    }
+
+    public void SetAttack(int damage, float knockback)
+    {
         this.damage = damage;
-   }
+
+        this.knockback = knockback;
+    }
 }

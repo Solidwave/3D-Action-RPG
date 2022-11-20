@@ -28,6 +28,8 @@ public class EnemyIdleState : EnemyBaseState
     {
         
         Move(deltaTime);
+
+        FacePlayer();
         
         if (IsInChangeRange())
         {
@@ -35,6 +37,6 @@ public class EnemyIdleState : EnemyBaseState
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
         }
-        stateMachine.Animator.SetFloat(SpeedHash, 1f, AnimatorDampTime, Time.deltaTime);
+        stateMachine.Animator.SetFloat(SpeedHash, 0f, AnimatorDampTime, Time.deltaTime);
     }
 }
