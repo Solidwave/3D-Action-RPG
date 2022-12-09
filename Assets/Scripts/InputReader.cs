@@ -8,11 +8,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
 
     public bool IsAttacking {get; private set;}
+    public bool IsBlocking {get; private set;}
     public Vector2 MovementValue { get; private set; }
     public event Action JumpEvent;
     public event Action TargetEvent;
-    public event Action CancelEvent;
-
     public event Action DodgeEvent;
     private Controls controls;
     void Start()
@@ -36,8 +35,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             return;
         }
         JumpEvent?.Invoke();
+    }
 
-
+    public void OnBlock(InputAction.CallbackContext context)
+    {
+         if (context.performed)
+        {
+            IsBlocking = true;
+        } else if (context.canceled)
+        {
+            IsBlocking = false;
+        }
     }
 
     public void OnDodge(InputAction.CallbackContext context)
@@ -47,7 +55,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             return;
         }
         DodgeEvent?.Invoke();
-
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -64,14 +71,6 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         TargetEvent?.Invoke();
     }
 
-    public void OnCancel(InputAction.CallbackContext context)
-    {
-        if (!context.performed)
-        {
-            return;
-        }
-        CancelEvent?.Invoke();
-    }
 
     public void OnLook(InputAction.CallbackContext context)
     {

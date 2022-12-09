@@ -33,11 +33,16 @@ public abstract class EnemyBaseState : State
 
         faceDirection.y = 0f;
 
-        stateMachine.transform.rotation =  Quaternion.LookRotation(faceDirection);
+        stateMachine.transform.rotation = Quaternion.LookRotation(faceDirection);
     }
 
     protected bool IsInChangeRange()
     {
+        if (stateMachine.Player.IsDead)
+        {
+            return false;
+        }
+
         float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).magnitude;
         return playerDistanceSqr <= stateMachine.PlayerChasingRange;
     }

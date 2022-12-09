@@ -51,18 +51,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Cancel",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "084daadd-8ab0-4fac-a66b-640b99774431",
+                    "id": "4d998e19-592b-449f-a051-2da25c40c7c2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "Block",
                     "type": "Button",
-                    "id": "4d998e19-592b-449f-a051-2da25c40c7c2",
+                    "id": "fec34700-a3b3-4b22-a8ab-300d1901efea",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -281,28 +281,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b893fa84-e6be-4115-8254-ed031b43c2b6",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse & keyboard",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e19cb901-7325-4bd8-8cd4-aada1ba090dc",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c1c79496-47cd-443e-9037-f2c5543424de",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -320,6 +298,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "360be7ab-73f8-47ef-a5a1-a7c2ecb1401d",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & keyboard",
+                    "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -13,14 +13,23 @@ public class PlayerStateMachine : StateMachine {
     [field: SerializeField] public float FreeLookMovementSpeed {get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed {get; private set; }
     [field: SerializeField] public float RotationDamping {get; private set; }
+    [field: SerializeField] public float DodgeDuration {get; private set; }
+    [field: SerializeField] public float DodgeLength {get; private set; }
+    [field: SerializeField] public float JumpForce {get; private set; }
+    public float PreviousDodgeTime {get; private set; } = Mathf.NegativeInfinity;
     [field: SerializeField] public WeaponDamage Weapon {get; private set; }
     [field: SerializeField] public Health Health {get; private set; }
     [field: SerializeField] public Ragdoll Ragdoll {get; private set; }
+    [field: SerializeField] public LedgeDetector LedgeDetector {get; private set; }
     [field: SerializeField] public Attack[] Attacks {get; private set; }
     public Transform MainCameraTransform {get; private set; }
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
+        Cursor.visible = false;
+
         MainCameraTransform = Camera.main.transform;
 
         SwitchState(new PlayerFreeLookState(this));
@@ -42,7 +51,6 @@ public class PlayerStateMachine : StateMachine {
         Health.OnTakeDamage -= HandleTakeDamage;
 
         Health.OnDie -= HandleDie;
-
     }
 
     private void HandleTakeDamage()

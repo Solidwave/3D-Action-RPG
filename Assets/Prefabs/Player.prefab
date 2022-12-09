@@ -31,6 +31,100 @@ Transform:
   m_Father: {fileID: 1869549722442310684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4574462944138660828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5356177972052002521}
+  - component: {fileID: 2376302542876696890}
+  - component: {fileID: 9117268276989821558}
+  - component: {fileID: 4176568978464185710}
+  m_Layer: 8
+  m_Name: LedgeDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5356177972052002521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574462944138660828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.208, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1869549722442310684}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2376302542876696890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574462944138660828}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5580658, y: 0.09877682, z: 0.10814524}
+  m_Center: {x: -0.02284664, y: 0.031430244, z: -0.036180735}
+--- !u!54 &9117268276989821558
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574462944138660828}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4176568978464185710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574462944138660828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc7fd61c15383a4fa994b4e60f34db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6061246180445788930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1099,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8446982080690372391}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5356177972052002521}
     - targetCorrespondingSourceObject: {fileID: 1852576806548013000, guid: a57d9a1c8d66a5c469c8ac0b76dc3139, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7040565350041838743}
@@ -1213,9 +1310,13 @@ MonoBehaviour:
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDamping>k__BackingField: 10
+  <DodgeDuration>k__BackingField: 0.6
+  <DodgeLength>k__BackingField: 3
+  <JumpForce>k__BackingField: 4
   <Weapon>k__BackingField: {fileID: 3588552535498481048}
   <Health>k__BackingField: {fileID: 384227155080904353}
   <Ragdoll>k__BackingField: {fileID: 7637485757800795152}
+  <LedgeDetector>k__BackingField: {fileID: 0}
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Attack1
     <ComboStateIndex>k__BackingField: 1
